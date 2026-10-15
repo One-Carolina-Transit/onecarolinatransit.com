@@ -12,7 +12,7 @@
                e.g. "https://square.link/u/xxxxxxxx"
 */
 window.OCT_PAYMENT = {
-  zelle: "",
-  cashApp: "",
+  zelle: "carolinatransit03@gmail.com",
+  cashApp: "$onecarolinatransit",
   squareLink: ""
 };
