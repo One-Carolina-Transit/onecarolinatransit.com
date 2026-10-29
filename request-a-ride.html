@@ -144,7 +144,20 @@
 
           <div class="bg-white border-2 border-primary-700 rounded-lg p-6 mt-6">
             <p class="font-semibold text-primary-900 mb-1">Estimate your fare</p>
-            <p class="text-sm text-neutral-600 mb-4">$10 loading fee + $1.85/mile, calculated round trip.</p>
+            <p class="text-sm text-neutral-600 mb-4">$10 loading fee + $1.85/mile, calculated round trip. Wheelchair rides add a $20 wheelchair loading fee ($30 in loading fees).</p>
+            <fieldset class="mb-4">
+              <legend class="block text-sm font-medium text-neutral-900 mb-1.5">Ride type</legend>
+              <div class="flex gap-2">
+                <label class="flex items-center gap-2 border-[1.5px] border-neutral-300 rounded px-4 py-3 flex-1 cursor-pointer has-[:checked]:border-primary-700 has-[:checked]:bg-primary-700/5">
+                  <input type="radio" name="fare-type" value="ambulatory" checked class="w-4 h-4">
+                  <span>Ambulatory</span>
+                </label>
+                <label class="flex items-center gap-2 border-[1.5px] border-neutral-300 rounded px-4 py-3 flex-1 cursor-pointer has-[:checked]:border-primary-700 has-[:checked]:bg-primary-700/5">
+                  <input type="radio" name="fare-type" value="wheelchair" class="w-4 h-4">
+                  <span>Wheelchair</span>
+                </label>
+              </div>
+            </fieldset>
             <label for="fare-miles" class="block text-sm font-medium text-neutral-900 mb-1.5">Round-trip mileage</label>
             <div class="flex gap-2">
               <input type="number" id="fare-miles" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 80"
