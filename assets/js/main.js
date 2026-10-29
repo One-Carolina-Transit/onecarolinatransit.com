@@ -88,8 +88,8 @@ function initFaqAccordion() {
 }
 
 /* ---------- Fare calculator (Request a Ride page) ---------- */
-/* Pricing per owner: $10 loading fee + $1.85/mile, calculated round trip.
-   Wheelchair rides add a $20 wheelchair loading fee, once per round trip (Oct 29). */
+/* Pricing per owner (Oct 29): loading fee $10 ambulatory / $20 wheelchair, once per
+   round trip, + $1.85/mile, calculated round trip. */
 function initFareCalculator() {
   const btn = document.getElementById('fare-calc-btn');
   const input = document.getElementById('fare-miles');
@@ -97,7 +97,7 @@ function initFareCalculator() {
   if (!btn || !input || !result) return;
 
   const LOADING_FEE = 10;
-  const WHEELCHAIR_FEE = 20;
+  const WHEELCHAIR_LOADING_FEE = 20;
   const PER_MILE = 1.85;
   const wheelchair = document.querySelector('input[name="fare-type"][value="wheelchair"]');
 
@@ -108,7 +108,7 @@ function initFareCalculator() {
       return;
     }
     const isWheelchair = wheelchair && wheelchair.checked;
-    const fare = LOADING_FEE + (isWheelchair ? WHEELCHAIR_FEE : 0) + PER_MILE * miles;
+    const fare = (isWheelchair ? WHEELCHAIR_LOADING_FEE : LOADING_FEE) + PER_MILE * miles;
     result.textContent = 'Estimated ' + (isWheelchair ? 'wheelchair' : 'ambulatory') + ' fare: $' + fare.toFixed(2);
   }
 
